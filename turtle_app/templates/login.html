@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  {% if error %}
+    <p style="background-color: firebrick">{{error}}</p>
+  {% endif %}
+<body class="login-img" id="login-cycle-img">
+ <main class="login-page-main">
+  <div class="d-sm-block">
+  
+      <section class="form-section mb-5 rounded-lg shadow" id="login-page-form">
+        <form action="{% url 'login' %}" method="POST">
+          {% csrf_token %}
+          <p>
+            <label class="login-page" for="username">Username:</label>
+            <input class="rounded shadow-lg" type="text" name="username" maxlength="25" minlength="2" placeholder="Username" required>
+          </p>
+          <p>
+            <label class="login-password" for="password">Password</label>
+            <input class="rounded shadow-lg" type="password" name="password" maxlength="25" minlength="4" placeholder="Password" required>
+          </p>
+          <button type="submit" class="btn btn-lg btn-primary shadow">Login</button>
+        </form>
+      </section>
+
+  </main>
+
+</body>
+  
+{% endblock %}
