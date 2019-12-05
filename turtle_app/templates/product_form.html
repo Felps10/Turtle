@@ -1,0 +1,46 @@
+{% extends 'base.html' %} {% block content %}
+<main class="product-form-main">
+  <h1 class="product-form-title">Sell your product</h1>
+  <section class="product-form-section">
+    <form method="POST" class="col-md-6 order-md-1">
+      {% csrf_token %}
+      <div class="mb-3">
+        <label for="id_name" class="product-form-label">Product Name</label>
+        <div>
+          {{form.name}}
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="id_category" class="product-form-label"
+          >Product Category</label
+        >
+        <div>
+          {{form.category}}
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="id_description" class="product-form-label"
+          >Description</label
+        >
+        <div>
+          {{form.description}}
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="id_photo" class="product-form-label">Product Picture</label>
+        <div>
+          {{form.photo}}
+        </div>
+      </div>
+      <button
+        class="btn btn-success btn-lg btn-block"
+        type="submit"
+        class="login-button"
+      >
+        Upload Product
+      </button>
+    </form>
+  </section>
+</main>
+
+{% endblock %}

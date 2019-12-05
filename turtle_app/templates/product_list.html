@@ -1,0 +1,20 @@
+{% extends 'base.html' %} {% block content %}
+
+<section class="course-list-intro">
+  <div class="course-list-intro-container">
+    <h1 class="course-list-intro-text">Check out all products</h1>
+    <h2 class="course-list-intro-text">
+      Hey {{user.first_name}}, ready to unlock oportunities?
+    </h2>
+  </div>
+</section>
+
+<main class="course-list-main">
+  <section class="course-list-container">
+    {% for course in courses %}
+    <h3 class="course-list-div-title">Say my name: {{ product.name }}</h3>
+    {% endfor %}
+  </section>
+</main>
+
+{% endblock %}
