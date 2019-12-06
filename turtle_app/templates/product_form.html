@@ -2,7 +2,12 @@
 <main class="product-form-main">
   <h1 class="product-form-title">Sell your product</h1>
   <section class="product-form-section">
-    <form method="POST" class="col-md-6 order-md-1">
+    <hr />
+    <form
+      enctype="multipart/form-data"
+      method="POST"
+      class="col-md-6 order-md-1"
+    >
       {% csrf_token %}
       <div class="mb-3">
         <label for="id_name" class="product-form-label">Product Name</label>
@@ -10,6 +15,7 @@
           {{form.name}}
         </div>
       </div>
+      <hr />
       <div class="mb-3">
         <label for="id_category" class="product-form-label"
           >Product Category</label
@@ -18,6 +24,7 @@
           {{form.category}}
         </div>
       </div>
+      <hr />
       <div class="mb-3">
         <label for="id_description" class="product-form-label"
           >Description</label
@@ -26,17 +33,15 @@
           {{form.description}}
         </div>
       </div>
+      <hr />
       <div class="mb-3">
         <label for="id_photo" class="product-form-label">Product Picture</label>
         <div>
           {{form.photo}}
         </div>
       </div>
-      <button
-        class="btn btn-success btn-lg btn-block"
-        type="submit"
-        class="login-button"
-      >
+      <hr />
+      <button type="submit" class="btn btn-lg btn-primary shadow">
         Upload Product
       </button>
     </form>

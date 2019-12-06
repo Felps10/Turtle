@@ -28,12 +28,14 @@ def product_list(request):
 
 def product_create(request):
     if request.method == 'POST':
-        form = ProductForm(request.POST)
+        form = ProductForm(request.POST, request.FILES)
         if form.is_valid():
             product = form.save(commit=False)
             product.owner = request.user
             product.save()
             return redirect('landing')
+        else:
+            print('error')
     else:
         form = ProductForm()
     context = {'form': form, 'header': "Add New Product"}
