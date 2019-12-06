@@ -14,6 +14,7 @@
   <section class="product-list-container">
     {% for product in products %}
     <h3>Say my name: {{ product.name }}</h3>
+    <a href="{% url 'product_detail' pk=product.pk %}">See details</a>
     {% endfor %}
   </section>
 </main>

@@ -10,7 +10,7 @@
     </div>
     <div class="moveBox-Register"></div>
     <section class="form-section rouned-lg shadow" id="register-form">
-      <form action="{% url 'register' %}" method="POST" class="artist-form">
+      <form action="{% url 'register' %}" method="POST">
         {% csrf_token %}
         <p>
           <label for="first_name">First Name: </label>

@@ -1,0 +1,5 @@
+{% extends 'base.html' %} {% block content %}
+<h1>Product Detail</h1>
+<h4>{{product.name}}</h4>
+<a href="{% url 'product_edit' pk=product.pk %}">Edit</a>
+{% endblock %}

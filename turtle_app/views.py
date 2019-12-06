@@ -21,13 +21,21 @@ def api_products(request):
 
 
 def profile(request):
-    return render(request, 'profile.html')
+    products = Product.objects.filter(owner=request.user)
+    context = {"products": products}
+    return render(request, 'profile.html', context)
 
 
 def product_list(request):
     products = Product.objects.all()
     context = {"products": products}
     return render(request, 'product_list.html', context)
+
+
+def product_detail(request, pk):
+    product = Product.objects.get(id=pk)
+    context = {"product": product}
+    return render(request, 'product_detail.html', context)
 
 
 def product_create(request):
@@ -44,3 +52,18 @@ def product_create(request):
         form = ProductForm()
     context = {'form': form, 'header': "Add New Product"}
     return render(request, 'product_form.html', context)
+
+
+def product_edit(request, pk):
+    product = Product.objects.get(id=pk)
+    if request.method == 'POST':
+        form = ProductForm(request.POST, instance=product)
+        if form.is_valid():
+            product = form.save()
+            return redirect('product_detail', pk=product.pk)
+        else:
+            print('Form is invalid')
+    else:
+        form = ProductForm(instance=product)
+        context = {'form': form, 'owner': product.owner}
+        return render(request, 'product_form.html', context)
