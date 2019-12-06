@@ -20,6 +20,10 @@ def api_products(request):
     return JsonResponse({"data": data, "status": 200})
 
 
+def profile(request):
+    return render(request, 'profile.html')
+
+
 def product_list(request):
     products = Product.objects.all()
     context = {"products": products}
