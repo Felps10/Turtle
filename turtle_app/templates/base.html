@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="{% static 'css/main.css' %}" />
     <!-- JAVASCRIPT FILE -->
     <script defer src="{% static 'script/main.js' %}"></script>
+    <!-- GOOGLE FONTS -->
+    <link href="https://fonts.googleapis.com/css?family=Baloo+Bhai&display=swap" rel="stylesheet">
     <!-- BOOTSTRAP -->
     <link
       rel="stylesheet"
@@ -37,10 +39,12 @@
   </head>
   <body>
     <header id="base-header">
-      <h4><a href="{% url 'landing' %}">Turtle</a></h4>
+      <a href="{% url 'landing' %}"><img class="base-turtle-icon" src="../static/assets/turtle.png"></a>
+      <h4><a class="base-turtle" href="{% url 'landing' %}">Turtle</a></h4>
       <ul class="nav nav-tabs">
         <li><a href="{% url 'product_list' %}">Products</a></li>
         <li class="nav-item dropdown">
+          
           <a
             class="nav-link dropdown-toggle"
             data-toggle="dropdown"
@@ -48,7 +52,7 @@
             role="button"
             aria-haspopup="true"
             aria-expanded="false"
-            >Account</a
+            ><img class="base-turtle-icon" src="../static/assets/user.png"></a
           >
 
           <div class="dropdown-menu">
@@ -71,4 +75,8 @@
       {% block content %} {% endblock %}
     </div>
   </body>
+  <footer>
+      <a href="{% url 'landing' %}"><img class="base-turtle-icon" src="../static/assets/turtle.png"></a>
+      <label>This is the footer</label>
+  </footer>
 </html>

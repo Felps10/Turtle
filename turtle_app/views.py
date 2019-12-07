@@ -45,7 +45,7 @@ def product_create(request):
             product = form.save(commit=False)
             product.owner = request.user
             product.save()
-            return redirect('landing')
+            return redirect('product_list')
         else:
             print('error')
     else:
@@ -67,3 +67,8 @@ def product_edit(request, pk):
         form = ProductForm(instance=product)
         context = {'form': form, 'owner': product.owner}
         return render(request, 'product_form.html', context)
+
+
+def product_delete(request, pk):
+    Product.objects.get(id=pk).delete()
+    return redirect('product_list')

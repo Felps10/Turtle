@@ -1,7 +1,75 @@
 {% extends 'base.html' %} {% block content %}
 
 <h1>Profile Page</h1>
-<a href="#">Edit Profile</a>
-{% for product in products %}
-<h3>I am selling: {{ product.name }}</h3>
-{% endfor %} {% endblock %}
+
+<section class="profile-section">
+  <div>
+    <h3>My Profile</h3>
+    <h5>{{ user.username }}</h5>
+    <a href="#">Edit Profile</a>
+  </div>
+  <div class="profile-div-selling">
+    {% for product in products %}
+    <h3>I am selling: {{ product.name }}</h3>
+    <button class="btn btn-info">
+      <a href="{% url 'product_edit' pk=product.pk %}"> Edit</a>
+    </button>
+    <!-- Button trigger modal -->
+    <button
+      type="button"
+      class="btn btn-danger"
+      data-toggle="modal"
+      data-target="#exampleModalCenter"
+    >
+      Delete
+    </button>
+
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="exampleModalCenter"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="exampleModalCenterTitle"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">
+              Are you sure you want to delete {{ product.name }}?
+            </h5>
+            <!-- <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button> -->
+          </div>
+          <div class="modal-body">
+            You cannot undo this.
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-dismiss="modal"
+            >
+              Close
+            </button>
+            <button type="button" class="btn btn-danger">
+              <a href="{% url 'product_delete' pk=product.pk %}"
+                >Yes, delete.</a
+              >
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+
+{% endblock %}

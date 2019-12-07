@@ -1,8 +1,26 @@
-* {
+/* * {
   background: oldlace;
+} */
+
+/* BASE */
+.base-turtle {
+  color: aliceblue;
+  font-family: "Baloo Bhai", cursive;
+  font-size: 90px;
 }
 
+.base-turtle-icon {
+  height: 100px;
+}
 #base-header {
   display: flex;
   justify-content: space-between;
+  background: rgba(0, 128, 0, 0.4);
+  color: aliceblue;
+}
+
+/* PROFILE PAGE */
+.profile-section {
+  display: flex;
+  justify-content: space-evenly;
 }
