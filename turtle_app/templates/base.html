@@ -39,37 +39,40 @@
   </head>
   <body>
     <header id="base-header">
-      <a href="{% url 'landing' %}"><img class="base-turtle-icon" src="../static/assets/turtle.png"></a>
-      <h4><a class="base-turtle" href="{% url 'landing' %}">Turtle</a></h4>
-      <ul class="nav nav-tabs">
-        <li><a href="{% url 'product_list' %}">Products</a></li>
-        <li class="nav-item dropdown">
-          
-          <a
-            class="nav-link dropdown-toggle"
-            data-toggle="dropdown"
-            href="#"
-            role="button"
-            aria-haspopup="true"
-            aria-expanded="false"
-            ><img class="base-turtle-icon" src="../static/assets/user.png"></a
-          >
+      <div class="base-title">
+        <a href="{% url 'landing' %}"><img class="base-turtle-icon" src="../static/assets/turtle.png"></a>
+        <h4><a class="base-turtle" href="{% url 'landing' %}">Turtle.</a></h4>
+      </div>
+      <div class="base-icons">
+        <ul class="nav nav-tabs">
+          <li><a class="base-nav" href="{% url 'product_list' %}"><img class="base-turtle-icon" src="../static/assets/shopping-cart.png"></a></li>
+          <li class="base-nav nav-item dropdown">
+            
+            <a
+              class="nav-link dropdown-toggle"
+              data-toggle="dropdown"
+              href="#"
+              role="button"
+              aria-haspopup="true"
+              aria-expanded="false"
+              ><img class="base-turtle-icon" src="../static/assets/user.png"></a
+            >
 
-          <div class="dropdown-menu">
-            {% if user.is_authenticated %}
-              <a class="dropdown-item" href="{% url 'profile' %}">Profile</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="{% url 'logout' %}">Logout</a>
-            {% else %}
-              <a class="dropdown-item" href="{% url 'login' %}">Login</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="{% url 'register' %}">Register</a>
-            {% endif %}
+            <div class="dropdown-menu">
+              {% if user.is_authenticated %}
+                <a class="dropdown-item" href="{% url 'profile' %}">Profile</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="{% url 'logout' %}">Logout</a>
+              {% else %}
+                <a class="dropdown-item" href="{% url 'login' %}">Login</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="{% url 'register' %}">Register</a>
+              {% endif %}
+            </div>
           </div>
-        </div>
-  
-        </li>
-      </ul>
+          </li>
+        </ul>
+      </div>
     </header>
     <div class="mb-5">
       {% block content %} {% endblock %}
@@ -78,5 +81,6 @@
   <footer>
       <a href="{% url 'landing' %}"><img class="base-turtle-icon" src="../static/assets/turtle.png"></a>
       <label>This is the footer</label>
+
   </footer>
 </html>

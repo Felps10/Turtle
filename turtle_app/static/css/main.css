@@ -1,22 +1,39 @@
-/* * {
-  background: oldlace;
-} */
+* {
+  font-family: "Baloo Bhai", cursive;
+}
 
 /* BASE */
 .base-turtle {
-  color: aliceblue;
+  color: green;
   font-family: "Baloo Bhai", cursive;
   font-size: 90px;
 }
 
+.base-title {
+  display: flex;
+}
+
 .base-turtle-icon {
   height: 100px;
+  margin: 0 30px;
+}
+
+.base-nav {
+  color: green;
 }
 #base-header {
   display: flex;
   justify-content: space-between;
-  background: rgba(0, 128, 0, 0.4);
   color: aliceblue;
+  padding: 20px;
+}
+/* LANDING PAGE */
+
+.landing-turtle-img {
+  position: absolute;
+  height: 300px;
+  width: 500px;
+  z-index: -1;
 }
 
 /* PROFILE PAGE */
