@@ -1,5 +1,38 @@
 {% extends 'base.html' %} {% block content %}
 
-<img class="landing-turtle-img" src="../static/assets/landingpage-turtle.jpg" />
+<main class="landing-main">
+  <div class="landing-first-section row featurette">
+    <div class="col-md-5 order-md-1">
+      <section class="landing-section-intro">
+        <div>
+          <label class="landing-label-intro">Buy what you need, </label>
+          <label class="landing-label-intro">sell what you don't need</label>
+        </div>
+        <label class="with-turtle">With Turtle.</label>
 
+        <img
+          src="../static/assets/intro.jpg"
+          class="landing-img bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto"
+          width="500"
+          height="500"
+          xmlns="http://www.w3.org/2000/svg"
+          preserveAspectRatio="xMidYMid slice"
+          focusable="false"
+          role="img"
+        />
+      </section>
+    </div>
+    <div class="landing-intro col-md-7 order-md-2">
+      <h2 class="featurette-heading">
+        This is turtle.
+        <span class="text-muted">Detach from the useless</span>
+      </h2>
+      <section class="landing-section-account">
+        <label>New Here?</label>
+        <label>Already have an account?</label>
+        <label>Just want to check what's out there?</label>
+      </section>
+    </div>
+  </div>
+</main>
 {% endblock %}

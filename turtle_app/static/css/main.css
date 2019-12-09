@@ -4,9 +4,14 @@
 
 /* BASE */
 .base-turtle {
-  color: green;
-  font-family: "Baloo Bhai", cursive;
+  color: rgb(0, 128, 0);
   font-size: 90px;
+}
+
+.base-turtle:hover {
+  color: whitesmoke;
+  font-size: 90px;
+  text-decoration: none;
 }
 
 .base-title {
@@ -26,18 +31,82 @@
   justify-content: space-between;
   color: aliceblue;
   padding: 20px;
+  background: rgba(0, 20, 0, 0.85);
 }
+
+#thisisthefooter {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  background: rgba(0, 20, 0, 0.85);
+}
+
+footer div {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.footer-icon {
+  height: 50px;
+  margin: 10% 30px;
+}
+
 /* LANDING PAGE */
 
-.landing-turtle-img {
+.landing-main {
+  display: flex;
+  flex-direction: column;
+}
+
+.landing-first-section {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 20px;
+}
+
+.landing-intro {
+  color: green;
+}
+
+.landing-section-intro {
+  /* color: aliceblue; */
+  display: flex;
+  flex-direction: column;
+  font-size: xx-large;
+  color: aliceblue;
+  padding: 3px;
+}
+
+.landing-label-intro {
+  margin: 0 auto;
+}
+
+.with-turtle {
+  margin-top: 200px;
+}
+
+.landing-section-account {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  font-size: x-large;
+}
+.landing-img {
   position: absolute;
-  height: 300px;
-  width: 500px;
+  border-radius: 9px;
   z-index: -1;
 }
 
 /* PROFILE PAGE */
 .profile-section {
+  width: 100%;
   display: flex;
-  justify-content: space-evenly;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.profile-infos {
+  position: fixed;
+  margin: 90px;
+  border: black;
 }

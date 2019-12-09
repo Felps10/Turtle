@@ -78,9 +78,15 @@
       {% block content %} {% endblock %}
     </div>
   </body>
-  <footer>
-      <a href="{% url 'landing' %}"><img class="base-turtle-icon" src="../static/assets/turtle.png"></a>
-      <label>This is the footer</label>
-
+  
+  <footer id="thisisthefooter">
+    <div>
+      <div>
+        <a href="{% url 'landing' %}"><img class="footer-icon" src="../static/assets/turtle.png"></a>
+        <a href="#"><img class="footer-icon" src="../static/assets/instagram.png"></a>
+        <a href="#"><img class="footer-icon" src="../static/assets/linkedin.png"></a>
+       </div>
+       
+    </div>
   </footer>
 </html>
