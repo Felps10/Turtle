@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse, JsonResponse
 from django.contrib.auth.decorators import login_required
-from .models import Product
+from .models import Product, Purchase
 from .forms import ProductForm
 
 # Create your views here.
@@ -36,6 +36,17 @@ def product_detail(request, pk):
     product = Product.objects.get(id=pk)
     context = {"product": product}
     return render(request, 'product_detail.html', context)
+
+
+def purchase_create(request, pk):
+    product = Product.object.get(id=pk)
+    purchase = Purchase(buyer=request.user, product=product)
+    purchase.save()
+    return redirect('profile')
+
+
+def cancel_purchase(request, pk):
+    product = Product.objects.get(id=pk)
 
 
 def product_create(request):

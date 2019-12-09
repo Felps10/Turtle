@@ -4,7 +4,7 @@
 
 /* BASE */
 .base-turtle {
-  color: rgb(0, 128, 0);
+  color: rgb(0, 230, 0);
   font-size: 90px;
 }
 
@@ -23,22 +23,19 @@
   margin: 0 30px;
 }
 
-.base-nav {
-  color: green;
-}
 #base-header {
   display: flex;
   justify-content: space-between;
   color: aliceblue;
   padding: 20px;
-  background: rgba(0, 20, 0, 0.85);
+  background: rgba(0, 50, 0, 1);
 }
 
 #thisisthefooter {
   width: 100%;
-  position: absolute;
+  position: fixed;
   bottom: 0;
-  background: rgba(0, 20, 0, 0.85);
+  background: rgba(0, 50, 0, 1);
 }
 
 footer div {
@@ -64,6 +61,10 @@ footer div {
   padding: 20px;
 }
 
+#clickme-message {
+  font-size: 40px;
+}
+
 .landing-intro {
   color: green;
 }
@@ -77,8 +78,14 @@ footer div {
   padding: 3px;
 }
 
+div div section div {
+  display: flex;
+  flex-direction: column;
+  align-content: flex-start;
+}
+
 .landing-label-intro {
-  margin: 0 auto;
+  margin: 0;
 }
 
 .with-turtle {
@@ -102,11 +109,27 @@ footer div {
   width: 100%;
   display: flex;
   flex-direction: row;
-  justify-content: flex-end;
+  justify-content: center;
 }
 
 .profile-infos {
   position: fixed;
   margin: 90px;
   border: black;
+}
+
+/* PRODUCT DETAILS PAGE */
+
+.product-detail-container {
+  margin: 5% auto;
+}
+
+/* LOGIN AND REGISTER*/
+
+.auth-form {
+  width: 100%;
+  height: 100%;
+  max-width: 330px;
+  padding: 15px;
+  margin: auto;
 }

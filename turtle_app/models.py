@@ -25,4 +25,11 @@ class Product(models.Model):
     buyers = [""]
 
     def __str__(self):
-            return self.name
+        return self.name
+
+
+class Purchase(models.Model):
+    buyer = models.ForeignKey(
+        User, on_delete=models.CASCADE, related_name='purchases')
+    product = models.ForeignKey(
+        Product, on_delete=models.CASCADE, related_name='purchases')

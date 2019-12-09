@@ -40,12 +40,12 @@
   <body>
     <header id="base-header">
       <div class="base-title">
-        <a href="{% url 'landing' %}"><img class="base-turtle-icon" src="../static/assets/turtle.png"></a>
+        <a href="{% url 'landing' %}"><img class="base-turtle-icon" src="{% static 'assets/turtle.png' %}"></a>
         <h4><a class="base-turtle" href="{% url 'landing' %}">Turtle.</a></h4>
       </div>
       <div class="base-icons">
         <ul class="nav nav-tabs">
-          <li><a class="base-nav" href="{% url 'product_list' %}"><img class="base-turtle-icon" src="../static/assets/shopping-cart.png"></a></li>
+          <li><a href="{% url 'product_list' %}"><img class="base-turtle-icon" src="{% static 'assets/shopping-cart.png' %}"></a></li>
           <li class="base-nav nav-item dropdown">
             
             <a
@@ -55,12 +55,12 @@
               role="button"
               aria-haspopup="true"
               aria-expanded="false"
-              ><img class="base-turtle-icon" src="../static/assets/user.png"></a
+              ><img class="base-turtle-icon" src="{% static 'assets/turtle.png' %}"></a
             >
 
             <div class="dropdown-menu">
               {% if user.is_authenticated %}
-                <a class="dropdown-item" href="{% url 'profile' %}">Profile</a>
+                <a class="dropdown-item" href="{% url 'profile' %}">My Profile</a>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="{% url 'logout' %}">Logout</a>
               {% else %}
@@ -82,9 +82,9 @@
   <footer id="thisisthefooter">
     <div>
       <div>
-        <a href="{% url 'landing' %}"><img class="footer-icon" src="../static/assets/turtle.png"></a>
-        <a href="#"><img class="footer-icon" src="../static/assets/instagram.png"></a>
-        <a href="#"><img class="footer-icon" src="../static/assets/linkedin.png"></a>
+        <a href="{% url 'landing' %}"><img class="footer-icon" src="{% static 'assets/turtle.png' %}"></a>
+        <a href="#"><img class="footer-icon" src="{% static 'assets/instagram.png' %}"></a>
+        <a href="#"><img class="footer-icon" src="{% static 'assets/linkedin.png' %}"></a>
        </div>
        
     </div>
