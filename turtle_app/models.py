@@ -19,7 +19,7 @@ class Product(models.Model):
         default='Other',
     )
     description = models.CharField(max_length=400)
-    photo = models.FileField(upload_to='turtle_app/static/uploads/')
+    photo = models.ImageField(upload_to='turtle_app/static/uploads/')
     owner = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name="products")
     buyers = [""]

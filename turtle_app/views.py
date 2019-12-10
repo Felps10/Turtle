@@ -34,12 +34,13 @@ def product_list(request):
 
 def product_detail(request, pk):
     product = Product.objects.get(id=pk)
-    context = {"product": product}
+    purchases = Purchase.objects.filter(product=product.pk)
+    context = {"product": product, "purchases": purchases}
     return render(request, 'product_detail.html', context)
 
 
 def purchase_create(request, pk):
-    product = Product.object.get(id=pk)
+    product = Product.objects.get(id=pk)
     purchase = Purchase(buyer=request.user, product=product)
     purchase.save()
     return redirect('profile')
