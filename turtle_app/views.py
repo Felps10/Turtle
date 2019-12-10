@@ -71,6 +71,8 @@ def product_edit(request, pk):
     if request.method == 'POST':
         form = ProductForm(request.POST, instance=product)
         if form.is_valid():
+            product.photo = request.FILES['photo']
+            product.save()
             product = form.save()
             return redirect('product_detail', pk=product.pk)
         else:
@@ -83,4 +85,4 @@ def product_edit(request, pk):
 
 def product_delete(request, pk):
     Product.objects.get(id=pk).delete()
-    return redirect('product_list')
+    return redirect('profile')

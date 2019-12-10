@@ -1,11 +1,11 @@
 {% extends 'base.html' %} {% block content %}
-<section class="product-detail-container container jumbotron text-center">
+<section id="product-detail-container" class="container jumbotron text-center">
   <h1>Product Details</h1>
   <h4>{{product.name}}</h4>
   <h5>{{product.category}}</h5>
   <p>{{product.description}}</p>
   <p>{{product.photo}}</p>
-  <img src="{{product.photo}}" />
+  <img class="product-detail-img" src="{{product.photo.url}}" />
 
   <p>
     <a

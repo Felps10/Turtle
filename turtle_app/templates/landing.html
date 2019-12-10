@@ -1,6 +1,35 @@
 {% extends 'base.html' %} {% block content %}
 
 <main class="landing-main">
+  {% if user.is_authenticated %}
+  <video
+    class="landing-video"
+    loop="true"
+    autoplay="true"
+    src="../static/assets/turtlevideo.mp4"
+  ></video>
+  <div class="landing-logged">
+    <h1>Hi {{user.first_name}}, welcome back!</h1>
+    <h3>What do you want to do today?</h3>
+    <div>
+      <button class="btn btn-lg btn-info">
+        <a href="{% url 'product_list' %}">Buy</a>
+      </button>
+      <button class="btn btn-lg btn-info">
+        <a href="{% url 'product_create' %}">Sell</a>
+      </button>
+      <button class="btn btn-lg btn-info">
+        <a href="{% url 'profile' %}">Go to My Profile</a>
+      </button>
+    </div>
+    <div class="im-not-sure-div">
+      <button class="btn btn-lg btn-warning">I'm not sure!</button>
+    </div>
+    <div>
+      <h4></h4>
+    </div>
+  </div>
+  {% else %}
   <div
     class="position-relative overflow-hidden p-3 p-md-5  text-center bg-light"
   >
@@ -42,5 +71,7 @@
       <label>Just want to check what's out there?</label>
     </div>
   </div>
+
+  {% endif %}
 </main>
 {% endblock %}

@@ -38,6 +38,7 @@
   position: fixed;
   bottom: 0;
   background: rgba(0, 50, 0, 1);
+  z-index: 1;
 }
 
 footer div {
@@ -55,6 +56,37 @@ footer div {
 .landing-main {
   display: flex;
   flex-direction: column;
+  /* overflow-y: hidden; */
+}
+
+.landing-logged {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 60px;
+  color: whitesmoke;
+  /* overflow-y: hidden; */
+}
+.landing-logged h1 {
+  font-size: 60px;
+}
+.landing-video {
+  position: absolute;
+  width: 100%;
+  z-index: -1;
+  /* overflow-y: hidden; */
+}
+
+main div div button a {
+  color: whitesmoke;
+}
+
+main div div button a:hover {
+  color: whitesmoke;
+}
+
+.im-not-sure-div {
+  margin: 40px 0 0;
 }
 
 .landing-first-section {
@@ -123,8 +155,12 @@ div div section div {
 
 /* PRODUCT DETAILS PAGE */
 
-.product-detail-container {
+#product-detail-container {
   margin: 5% auto;
+}
+
+.product-detail-img {
+  width: 500px;
 }
 
 /* LOGIN AND REGISTER*/

@@ -1,14 +1,21 @@
 console.log("Javascript works");
 
 // https://www.w3schools.com/howto/howto_js_typewriter.asp
+
+// LANDING PAGE MESSAGE NOT LOGGED
 let i = 0;
-let txt = "Meet Turtle, your new e-market.";
+let notLoggedMessage = "Meet Turtle, your new e-market.";
 let speed = 50;
 
-function typeWriter() {
-  if (i < txt.length) {
-    document.getElementById("clickme-message").innerHTML += txt.charAt(i);
+function sendNLMessage() {
+  if (i < notLoggedMessage.length) {
+    document.getElementById(
+      "clickme-message"
+    ).innerHTML += notLoggedMessage.charAt(i);
     i++;
-    setTimeout(typeWriter, speed);
+    setTimeout(sendNLMessage, speed);
   }
 }
+
+// LANDING PAGE LOGGED
+let;
