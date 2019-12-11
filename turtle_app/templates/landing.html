@@ -9,7 +9,7 @@
     muted="true"
     src="../static/assets/turtlevideo.mp4"
   ></video>
-  <div class="landing-logged">
+  <div class="landing-div">
     <h1>Hi {{user.first_name}}, welcome back!</h1>
     <h3>What do you want to do today?</h3>
     <div>
@@ -33,48 +33,29 @@
     </div>
   </div>
   {% else %}
-  <div
-    class="position-relative overflow-hidden p-3 p-md-5  text-center bg-light"
-  >
-    <div class="p-lg-5 my-5">
-      <h1 class="display-4 font-weight-normal">This is Turtle</h1>
-      <span class="text-muted">Detach from the useless</span>
-      <a class="btn btn-success" onclick="sendWelcomeMsg()">Click Me</a>
-      <p id="clickme-message"></p>
-    </div>
-    <div class="product-device shadow-sm d-none d-md-block"></div>
-    <div
-      class="product-device product-device-2 shadow-sm d-none d-md-block"
-    ></div>
-  </div>
-  <div class="landing-first-section featurette">
-    <div class="col-md-5 order-md-1">
-      <section class="landing-section-intro">
-        <div>
-          <label class="landing-label-intro">Buy what you need, </label>
-          <label class="landing-label-intro">sell what you don't need</label>
-        </div>
-        <label class="with-turtle">With Turtle.</label>
-
-        <img
-          src="../static/assets/intro.jpg"
-          class="landing-img bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto"
-          width="500"
-          height="500"
-          xmlns="http://www.w3.org/2000/svg"
-          preserveAspectRatio="xMidYMid slice"
-          focusable="false"
-          role="img"
-        />
-      </section>
-    </div>
-    <div class="landing-section-account col-md-7 order-md-2">
+  <video
+    class="landing-video"
+    loop="true"
+    autoplay="true"
+    muted="true"
+    src="../static/assets/handshake.mp4"
+  ></video>
+  <div class="landing-div">
+    <h1>Hi, welcome to Turtle!</h1>
+    <span class="text-muted">Detach from the useless</span>
+    <a
+      id="hi-turtle-btn"
+      class="btn btn-lg btn-success"
+      onclick="sendWelcomeMsg()"
+      >Hi Turtle!</a
+    >
+    <p id="clickme-message"></p>
+    <div class="landing-section-account">
       <label>New Here?</label>
       <label>Already have an account?</label>
       <label>Just want to check what's out there?</label>
     </div>
   </div>
-
   {% endif %}
 </main>
 {% endblock %}

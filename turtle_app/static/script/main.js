@@ -4,7 +4,7 @@ console.log("Javascript works");
 
 // LANDING PAGE MESSAGE NOT LOGGED
 let i = 0;
-let welcomeMsg = "Meet Turtle, your new e-market.";
+let welcomeMsg = "Nice to meet you! This is Turtle, your new e-market.";
 let speed = 50;
 
 function sendWelcomeMsg() {

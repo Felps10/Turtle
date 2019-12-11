@@ -59,16 +59,13 @@ footer div {
   /* overflow-y: hidden; */
 }
 
-.landing-logged {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
+.landing-div {
   padding: 60px;
   color: whitesmoke;
-  /* overflow-y: hidden; */
+  font-size: 50px;
 }
-.landing-logged h1 {
-  font-size: 60px;
+.landing-div h1 {
+  font-size: 100px;
 }
 .landing-video {
   position: absolute;
@@ -92,10 +89,6 @@ main div div button a:hover {
   color: whitesmoke;
 }
 
-.im-not-sure-div {
-  margin: 40px 0 0;
-}
-
 .landing-first-section {
   display: flex;
   justify-content: space-evenly;
@@ -104,6 +97,7 @@ main div div button a:hover {
 
 #clickme-message {
   font-size: 40px;
+  max-width: 400px;
 }
 
 .landing-intro {
@@ -137,13 +131,23 @@ div div section div {
   display: flex;
   flex-direction: column;
   align-content: center;
-  align-items: center;
+  margin-top: 5%;
+  /* align-items: center; */
   font-size: xx-large;
 }
 .landing-img {
   position: absolute;
   border-radius: 9px;
   z-index: -1;
+}
+
+#hi-turtle-btn {
+  font-size: 30px;
+}
+
+#hi-turtle-btn:hover {
+  font-size: 30px;
+  cursor: pointer;
 }
 
 /* PROFILE PAGE ***************************************************************/
