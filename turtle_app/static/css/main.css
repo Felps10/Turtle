@@ -74,10 +74,12 @@ footer div {
   /* overflow-y: hidden; */
 }
 #logged-message-div {
-  margin-top: 100px;
-  width: 600px;
+  display: flex;
+  justify-content: flex-start;
 }
 #logged-message {
+  max-width: 600px;
+  font-size: 60px;
   color: yellow;
 }
 
@@ -223,13 +225,28 @@ div div section div {
 }
 
 /* SUCCESS PAGE *************************************************************/
+/* https://codepen.io/alex8855/details/mqwZbr */
 .success-content {
-  font-family: "Helvetica Neue";
+  display: flex;
+  /* flex-flow: column nowrap; */
+  justify-content: space-around;
+  align-items: center;
+  font-size: 90px;
+}
+
+.success-content div {
   display: flex;
   flex-flow: column nowrap;
-  justify-content: center;
   align-items: center;
-  font-size: 30px;
+  background: whitesmoke;
+  border-radius: 50px;
+  padding: 30px;
+  margin-top: 10%;
+}
+
+.success-content div a:hover {
+  transform: scale(1.4);
+  transition: transform 0.4s, opacity 0.5s;
 }
 
 .success-title {
@@ -237,21 +254,35 @@ div div section div {
   color: #5c5c5c;
 }
 
-.success-symbol {
-  -webkit-text-stroke: 13px white;
-  font-size: 150px;
-  color: #37b20a;
-}
-
-.text {
+.success-text {
   margin-top: 15px;
   font-size: 25px;
   color: #e07202;
   text-align: center;
-  font-family: "avenir";
   font-weight: lighter;
 }
 
+/* CREATE PRODUCT FORM */
+
+.create-product-form {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+}
+.create-product-form div {
+  width: fit-content;
+  align-self: center;
+}
+
+.create-product-form div div label {
+  font-size: 40px;
+}
+
+.product-form-title {
+  padding: 50px 0 0 50px;
+  color: whitesmoke;
+  font-size: 70px;
+}
 /* LOGIN AND REGISTER*/
 /* https://codepen.io/colorlib/pen/rxddKy */
 .login-page {

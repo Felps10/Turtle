@@ -23,7 +23,7 @@
         <a href="{% url 'profile' %}">Go to My Profile</a>
       </button>
     </div>
-    <div class="im-not-sure-div">
+    <div>
       <button onclick="sendLoggedMsg()" class="btn btn-sm btn-warning">
         I'm not sure!
       </button>
@@ -51,9 +51,13 @@
     >
     <p id="clickme-message"></p>
     <div class="landing-section-account">
-      <label>New Here?</label>
-      <label>Already have an account?</label>
-      <label>Just want to check what's out there?</label>
+      <label><a href="{% url 'register' %}">New Here?</a></label>
+      <label><a href="{% url 'login' %}">Already have an account?</a></label>
+      <label
+        ><a href="{% url 'product_list' %}"
+          >Just want to check what's out there?</a
+        ></label
+      >
     </div>
   </div>
   {% endif %}

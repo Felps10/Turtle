@@ -6,44 +6,48 @@
     <form
       enctype="multipart/form-data"
       method="POST"
-      class="col-md-6 order-md-1"
+      class="create-product-form"
     >
-      {% csrf_token %}
-      <div class="mb-3">
-        <label for="id_name" class="product-form-label">Product Name</label>
-        <div>
-          {{form.name}}
+      <div>
+        {% csrf_token %}
+        <div class="mb-3">
+          <label for="id_name" class="product-form-label">Product Name</label>
+          <div>
+            {{form.name}}
+          </div>
         </div>
-      </div>
-      <hr />
-      <div class="mb-3">
-        <label for="id_category" class="product-form-label"
-          >Product Category</label
-        >
-        <div>
-          {{form.category}}
+        <hr />
+        <div class="mb-3">
+          <label for="id_category" class="product-form-label"
+            >Product Category</label
+          >
+          <div>
+            {{form.category}}
+          </div>
         </div>
-      </div>
-      <hr />
-      <div class="mb-3">
-        <label for="id_description" class="product-form-label"
-          >Description</label
-        >
-        <div>
-          {{form.description}}
+        <hr />
+        <div class="mb-3">
+          <label for="id_description" class="product-form-label"
+            >Description</label
+          >
+          <div>
+            {{form.description}}
+          </div>
         </div>
-      </div>
-      <hr />
-      <div class="mb-3">
-        <label for="id_photo" class="product-form-label">Product Picture</label>
-        <div>
-          {{form.photo}}
+        <hr />
+        <div class="mb-3">
+          <label for="id_photo" class="product-form-label"
+            >Product Picture</label
+          >
+          <div>
+            {{form.photo}}
+          </div>
         </div>
+        <hr />
+        <button type="submit" class="btn btn-lg btn-primary shadow">
+          Upload
+        </button>
       </div>
-      <hr />
-      <button type="submit" class="btn btn-lg btn-primary shadow">
-        Upload
-      </button>
     </form>
   </section>
 </main>
