@@ -76,6 +76,13 @@ footer div {
   z-index: -1;
   /* overflow-y: hidden; */
 }
+#logged-message-div {
+  margin-top: 100px;
+  width: 600px;
+}
+#logged-message {
+  color: yellow;
+}
 
 main div div button a {
   color: whitesmoke;
@@ -139,21 +146,69 @@ div div section div {
   z-index: -1;
 }
 
-/* PROFILE PAGE */
-.profile-section {
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-}
-
+/* PROFILE PAGE ***************************************************************/
 .profile-infos {
   position: fixed;
+  font-size: 50px;
+  right: 200px;
   margin: 90px;
   border: black;
+  /* background: rgb(241, 90, 90); */
+  border-radius: 5px;
 }
 
-/* PRODUCT DETAILS PAGE */
+#profile-new-product {
+  color: yellow;
+}
+
+.profile-modal {
+  background: black;
+}
+
+.profile-modal-content {
+  background: gray;
+}
+
+.my-profile {
+  padding: 40px;
+}
+.my-profile h1 {
+  font-size: 90px;
+}
+
+.profile-product {
+  background: #1a1a1a;
+  color: wheat;
+}
+
+.profile-product-btns {
+  display: flex;
+  justify-content: flex-start;
+}
+.profile-product-btn {
+  margin: 2px auto;
+  color: white;
+}
+
+#mk-btn-white {
+  color: white;
+}
+
+/* PRODUCT LIST PAGE ******************************************************* */
+
+.product-list-intro {
+  display: flex;
+  justify-content: space-around;
+  color: whitesmoke;
+}
+.product-list-intro div {
+  margin-top: 2%;
+}
+.product-list-container {
+  padding: 5%;
+}
+
+/* PRODUCT DETAILS PAGE ******************************************************/
 
 #product-detail-container {
   margin: 5% auto;
@@ -161,6 +216,36 @@ div div section div {
 
 .product-detail-img {
   width: 500px;
+}
+
+/* SUCCESS PAGE *************************************************************/
+.success-content {
+  font-family: "Helvetica Neue";
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+}
+
+.success-title {
+  font-weight: bold;
+  color: #5c5c5c;
+}
+
+.success-symbol {
+  -webkit-text-stroke: 13px white;
+  font-size: 150px;
+  color: #37b20a;
+}
+
+.text {
+  margin-top: 15px;
+  font-size: 25px;
+  color: #e07202;
+  text-align: center;
+  font-family: "avenir";
+  font-weight: lighter;
 }
 
 /* LOGIN AND REGISTER*/
@@ -174,14 +259,15 @@ div div section div {
   position: relative;
   z-index: 1;
   background: #ffffff;
-  max-width: 360px;
-  margin: 0 auto 100px;
+  width: 600px;
+  margin: 2% auto;
   padding: 45px;
   text-align: center;
-  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.9), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 }
 .form input {
   font-family: "Roboto", sans-serif;
+  font-size: xx-large;
   outline: 0;
   background: #f2f2f2;
   width: 100%;

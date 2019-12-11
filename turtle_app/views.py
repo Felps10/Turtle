@@ -6,6 +6,8 @@ from .forms import ProductForm
 
 # Create your views here.
 
+# LANDING######################################################################
+
 
 def landing(request):
     return render(request, 'landing.html')
@@ -19,11 +21,15 @@ def api_products(request):
                      "description": product.description, })
     return JsonResponse({"data": data, "status": 200})
 
+# PROFILE ##################################################################
+
 
 def profile(request):
     products = Product.objects.filter(owner=request.user)
     context = {"products": products}
     return render(request, 'profile.html', context)
+
+# PRODUCTS ###################################################################
 
 
 def product_list(request):
@@ -37,17 +43,6 @@ def product_detail(request, pk):
     purchases = Purchase.objects.filter(product=product.pk)
     context = {"product": product, "purchases": purchases}
     return render(request, 'product_detail.html', context)
-
-
-def purchase_create(request, pk):
-    product = Product.objects.get(id=pk)
-    purchase = Purchase(buyer=request.user, product=product)
-    purchase.save()
-    return redirect('profile')
-
-
-def cancel_purchase(request, pk):
-    product = Product.objects.get(id=pk)
 
 
 def product_create(request):
@@ -86,3 +81,21 @@ def product_edit(request, pk):
 def product_delete(request, pk):
     Product.objects.get(id=pk).delete()
     return redirect('profile')
+
+# PURCHASES ##############################################################
+
+
+def purchase_create(request, pk):
+    product = Product.objects.get(id=pk)
+    purchase = Purchase(buyer=request.user, product=product)
+    purchase.save()
+    return redirect('success')
+
+
+def purchase_delete(request, purchase_pk):
+    Purchase.objects.get(id=purchase_pk).delete()
+    return redirect('profile')
+
+
+def success(request):
+    return render(request, 'success.html')

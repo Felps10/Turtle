@@ -5,11 +5,9 @@
   <div
     class="container-fluid d-flex flex-column justify-content-center align-items-center"
   >
-    <div class="d-none d-sm-block">
-      <div class="welcome-register">REGISTER</div>
-    </div>
     <div class="moveBox-Register"></div>
-    <section class="form-section rouned-lg shadow" id="register-form">
+    <section class="form form-section rouned-lg" id="register-form">
+      <h1>Welcome to Turtle</h1>
       <form class="auth-form" action="{% url 'register' %}" method="POST">
         {% csrf_token %}
         <p>

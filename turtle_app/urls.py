@@ -12,5 +12,9 @@ urlpatterns = [
     path('profile', views.profile, name='profile'),
     # PURCHESES
     path('products/<int:pk>/purchase',
-         views.purchase_create, name='purchase_create')
+         views.purchase_create, name='purchase_create'),
+    path('products/<int:pk>/purchase/delete',
+         views.purchase_delete, name='purchase_delete'),
+    # SUCCESS PAGE
+    path('success', views.success, name='success')
 ]

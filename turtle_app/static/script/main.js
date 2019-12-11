@@ -4,18 +4,27 @@ console.log("Javascript works");
 
 // LANDING PAGE MESSAGE NOT LOGGED
 let i = 0;
-let notLoggedMessage = "Meet Turtle, your new e-market.";
+let welcomeMsg = "Meet Turtle, your new e-market.";
 let speed = 50;
 
-function sendNLMessage() {
-  if (i < notLoggedMessage.length) {
-    document.getElementById(
-      "clickme-message"
-    ).innerHTML += notLoggedMessage.charAt(i);
+function sendWelcomeMsg() {
+  if (i < welcomeMsg.length) {
+    document.getElementById("clickme-message").innerHTML += welcomeMsg.charAt(
+      i
+    );
     i++;
-    setTimeout(sendNLMessage, speed);
+    setTimeout(sendWelcomeMsg, speed);
   }
 }
 
 // LANDING PAGE LOGGED
-let;
+let loggedMsg =
+  "Hey, don't worry! Remember that Turtle will always be by your side.";
+
+function sendLoggedMsg() {
+  if (i < loggedMsg.length) {
+    document.getElementById("logged-message").innerHTML += loggedMsg.charAt(i);
+    i++;
+    setTimeout(sendLoggedMsg, speed);
+  }
+}

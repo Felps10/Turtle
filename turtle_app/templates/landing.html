@@ -6,6 +6,7 @@
     class="landing-video"
     loop="true"
     autoplay="true"
+    muted="true"
     src="../static/assets/turtlevideo.mp4"
   ></video>
   <div class="landing-logged">
@@ -23,10 +24,12 @@
       </button>
     </div>
     <div class="im-not-sure-div">
-      <button class="btn btn-lg btn-warning">I'm not sure!</button>
+      <button onclick="sendLoggedMsg()" class="btn btn-sm btn-warning">
+        I'm not sure!
+      </button>
     </div>
-    <div>
-      <h4></h4>
+    <div id="logged-message-div">
+      <h1 id="logged-message"></h1>
     </div>
   </div>
   {% else %}
@@ -36,7 +39,7 @@
     <div class="p-lg-5 my-5">
       <h1 class="display-4 font-weight-normal">This is Turtle</h1>
       <span class="text-muted">Detach from the useless</span>
-      <a class="btn btn-success" onclick="typeWriter()">Click Me</a>
+      <a class="btn btn-success" onclick="sendWelcomeMsg()">Click Me</a>
       <p id="clickme-message"></p>
     </div>
     <div class="product-device shadow-sm d-none d-md-block"></div>
