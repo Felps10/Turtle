@@ -45,6 +45,7 @@ def product_detail(request, pk):
     return render(request, 'product_detail.html', context)
 
 
+@login_required
 def product_create(request):
     if request.method == 'POST':
         form = ProductForm(request.POST, request.FILES)
@@ -61,6 +62,7 @@ def product_create(request):
     return render(request, 'product_form.html', context)
 
 
+@login_required
 def product_edit(request, pk):
     product = Product.objects.get(id=pk)
     if request.method == 'POST':
@@ -78,6 +80,7 @@ def product_edit(request, pk):
         return render(request, 'product_form.html', context)
 
 
+@login_required
 def product_delete(request, pk):
     Product.objects.get(id=pk).delete()
     return redirect('profile')
@@ -85,6 +88,7 @@ def product_delete(request, pk):
 # PURCHASES ##############################################################
 
 
+@login_required
 def purchase_create(request, pk):
     product = Product.objects.get(id=pk)
     purchase = Purchase(buyer=request.user, product=product)
