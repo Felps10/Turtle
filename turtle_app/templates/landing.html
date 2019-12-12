@@ -1,27 +1,65 @@
 {% extends 'base.html' %} {% block content %}
 
-<h1>Works</h1>
-<p>
-  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste vero sequi
-  tempora, soluta quasi quia esse sit deserunt error repudiandae libero maiores
-  possimus facere, accusamus suscipit quidem delectus dolores. Cupiditate ipsa
-  voluptatum sunt et dicta optio ut, obcaecati dolor itaque laboriosam ad nisi
-  illo eum quos error at, laborum, voluptatem temporibus praesentium corrupti
-  magnam animi harum! Consequuntur minus impedit voluptas odio sapiente magni
-  alias velit libero corporis. Quasi, officiis praesentium. Deserunt commodi,
-  optio distinctio veritatis exercitationem consectetur animi maxime ipsa
-  cupiditate facere sequi voluptate doloremque id repudiandae aspernatur illo
-  deleniti accusantium eligendi sed! Est quibusdam maiores ratione corporis
-  maxime eos quis vel dolor assumenda cumque ipsum, laborum alias totam
-  voluptatem, repudiandae fuga accusantium voluptates voluptate et ipsam omnis
-  ab enim. Numquam provident, reiciendis voluptatibus, iure modi quisquam
-  deleniti obcaecati quis repellat explicabo tempore. Blanditiis tempora
-  exercitationem omnis nostrum, ab mollitia commodi dolore aperiam voluptatum
-  saepe magnam, beatae deserunt quos! Animi fugiat ducimus quam illo, eligendi
-  id quas cum at harum est eius, explicabo magnam eos et omnis incidunt debitis,
-  dolor eum qui minus rerum! Officia enim beatae pariatur, provident perferendis
-  minima deleniti asperiores, impedit laborum eum voluptate laudantium molestiae
-  commodi quia eos sequi eius rem vel. Asperiores quidem deleniti cumque!
-</p>
-
+<main class="landing-main">
+  {% if user.is_authenticated %}
+  <video
+    class="landing-video"
+    loop="true"
+    autoplay="true"
+    muted="true"
+    src="../static/assets/turtlevideo.mp4"
+  ></video>
+  <div class="landing-div">
+    <h1>Hi {{user.first_name}}, welcome back!</h1>
+    <h3>What do you want to do today?</h3>
+    <div>
+      <button class="btn btn-lg btn-info">
+        <a href="{% url 'product_list' %}">Buy</a>
+      </button>
+      <button class="btn btn-lg btn-info">
+        <a href="{% url 'product_create' %}">Sell</a>
+      </button>
+      <button class="btn btn-lg btn-info">
+        <a href="{% url 'profile' %}">Go to My Profile</a>
+      </button>
+    </div>
+    <div>
+      <button onclick="sendLoggedMsg()" class="btn btn-sm btn-warning">
+        I'm not sure!
+      </button>
+    </div>
+    <div id="logged-message-div">
+      <h1 id="logged-message"></h1>
+    </div>
+  </div>
+  {% else %}
+  <video
+    class="landing-video"
+    loop="true"
+    autoplay="true"
+    muted="true"
+    src="../static/assets/handshake.mp4"
+  ></video>
+  <div class="landing-div">
+    <h1>Hi, welcome to Turtle!</h1>
+    <span class="text-muted">Detach from the useless</span>
+    <a
+      id="hi-turtle-btn"
+      class="btn btn-lg btn-success"
+      onclick="sendWelcomeMsg()"
+      >Hi Turtle!</a
+    >
+    <p id="clickme-message"></p>
+    <div class="landing-section-account">
+      <label><a href="{% url 'register' %}">New Here?</a></label>
+      <label><a href="{% url 'login' %}">Already have an account?</a></label>
+      <label
+        ><a href="{% url 'product_list' %}"
+          >Just want to check what's out there?</a
+        ></label
+      >
+    </div>
+  </div>
+  {% endif %}
+</main>
 {% endblock %}

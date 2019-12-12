@@ -1,0 +1,13 @@
+{% extends 'base.html' %} {% block content %} {% load static %}
+
+<div class="success-content">
+  <div>
+    <h1 class="success-title">Thank you!</h1>
+    <h3 class="success-text">Your order is on the way!</h3>
+    <a href="{% url 'landing' %}"
+      ><img class="base-turtle-icon" src="{% static 'assets/turtle.png' %}"
+    /></a>
+  </div>
+</div>
+
+{% endblock %}

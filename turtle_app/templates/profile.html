@@ -1,0 +1,112 @@
+{% extends 'base.html' %} {% block content %}
+
+<div class="profile-infos">
+  <h3 class="text-muted">Infos</h3>
+  <h1>{{user.first_name}} {{user.last_name}}</h1>
+  <h5>{{ user.username }}</h5>
+  <h5>{{user.email}}</h5>
+  <a id="profile-new-product" href="{% url 'product_create' %}">New Product</a>
+</div>
+<section class="profile-section">
+  <div class="my-profile">
+    <h1>My Profile</h1>
+    <h5>{{ user.username }}</h5>
+  </div>
+  <div>
+    {% for product in products %}
+    <div class="col-md-6">
+      <div
+        class="profile-product row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative"
+      >
+        <div class="col p-4 d-flex flex-column position-static">
+          <strong class="d-inline-block mb-2 text-primary"
+            >{{ product.category }}</strong
+          >
+          <h3 class="mb-0">{{ product.name }}</h3>
+          <div class="mb-1 text-muted">{{product.owner}}</div>
+          <p class="card-text mb-auto">
+            {{ product.description }} Lorem ipsum dolor sit amet consectetur
+            adipisicing elit. Doloribus sapiente ab mollitia distinctio esse
+            quis placeat odit eaque vel accusantium unde molestias, iste animi
+            pariatur magnam, veniam dicta tempore ducimus quibusdam et dolore!
+            Molestiae mollitia natus quod alias laudantium labore ut minus
+            necessitatibus cum, cumque eos laboriosam cupiditate dolorum.
+            Suscipit laboriosam, cumque mollitia quia atque esse dolor
+            similique. Iste, eius asperiores sequi cumque maxime, officiis
+            impedit vero ipsa nulla sint odit debitis fuga facere id libero
+            accusantium? Sed vel aut dolorum minus doloribus, ea iure delectus,
+            reprehenderit consequatur, molestias nam ullam. Ducimus minima quod
+            error, laudantium corporis enim corrupti voluptatem?
+          </p>
+          <div class="profile-product-btns">
+            <button class="profile-product-btn btn btn-info">
+              <a
+                id="mk-btn-white"
+                href="{% url 'product_edit' pk=product.pk %}"
+              >
+                Edit</a
+              >
+            </button>
+            <!-- Button trigger modal -->
+            <button
+              type="button"
+              class="profile-product-btn btn btn-danger"
+              data-toggle="modal"
+              data-target="#exampleModalCenter"
+            >
+              Delete
+            </button>
+          </div>
+          <!-- Modal -->
+          <div
+            class="profile-modal modal fade"
+            id="exampleModalCenter"
+            tabindex="-1"
+            role="dialog"
+            aria-labelledby="exampleModalCenterTitle"
+            aria-hidden="true"
+          >
+            <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+                <div class="profile-modal-content modal-header">
+                  <h5 class="modal-title" id="exampleModalLongTitle">
+                    Are you sure you want to delete {{ product.name }}?
+                  </h5>
+                </div>
+                <div class="profile-modal-content modal-body">
+                  You cannot undo this.
+                </div>
+                <div class="profile-modal-content modal-footer">
+                  <button
+                    type="button"
+                    class="btn btn-secondary"
+                    data-dismiss="modal"
+                  >
+                    Close
+                  </button>
+                  <button type="button" class="btn btn-danger">
+                    <a href="{% url 'product_delete' pk=product.pk %}"
+                      >Yes, delete.</a
+                    >
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-auto d-none d-lg-block">
+          <img
+            src="{{product.photo.url}}"
+            class="bd-placeholder-img"
+            width="200"
+            height="250"
+          />
+        </div>
+      </div>
+    </div>
+
+    {% endfor %}
+  </div>
+</section>
+
+{% endblock %}

@@ -1,8 +1,389 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:300);
+
 * {
-  background: oldlace;
+  font-family: "Baloo Bhai", cursive;
+}
+
+/* BASE */
+.base-turtle {
+  color: rgb(0, 230, 0);
+  font-size: 90px;
+}
+
+.base-turtle:hover {
+  color: whitesmoke;
+  font-size: 90px;
+  text-decoration: none;
+}
+
+.base-title {
+  display: flex;
+}
+
+.base-turtle-icon {
+  height: 100px;
+  margin: 0 30px;
 }
 
 #base-header {
   display: flex;
   justify-content: space-between;
+  color: aliceblue;
+  padding: 20px;
+  background: rgba(0, 50, 0, 1);
+}
+
+#thisisthefooter {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  background: rgba(0, 50, 0, 1);
+  z-index: 1;
+}
+
+footer div {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.footer-icon {
+  height: 50px;
+  margin: 10% 30px;
+}
+
+/* LANDING PAGE */
+
+.landing-main {
+  display: flex;
+  flex-direction: column;
+  /* overflow-y: hidden; */
+}
+
+.landing-div {
+  padding: 60px;
+  color: whitesmoke;
+  font-size: 50px;
+}
+.landing-div h1 {
+  font-size: 100px;
+}
+.landing-video {
+  position: absolute;
+  width: 100%;
+  z-index: -1;
+  /* overflow-y: hidden; */
+}
+#logged-message-div {
+  display: flex;
+  justify-content: flex-start;
+}
+#logged-message {
+  max-width: 600px;
+  font-size: 60px;
+  color: yellow;
+}
+
+main div div button a {
+  color: whitesmoke;
+}
+
+main div div button a:hover {
+  color: whitesmoke;
+}
+
+.landing-first-section {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 20px;
+}
+
+#clickme-message {
+  font-size: 40px;
+  max-width: 400px;
+}
+
+.landing-intro {
+  color: green;
+}
+
+.landing-section-intro {
+  /* color: aliceblue; */
+  display: flex;
+  flex-direction: column;
+  font-size: xx-large;
+  color: aliceblue;
+  padding: 3px;
+}
+
+div div section div {
+  display: flex;
+  flex-direction: column;
+  align-content: flex-start;
+}
+
+.landing-label-intro {
+  margin: 0;
+}
+
+.with-turtle {
+  margin-top: 200px;
+}
+
+.landing-section-account {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  margin-top: 5%;
+  /* align-items: center; */
+  font-size: xx-large;
+}
+.landing-img {
+  position: absolute;
+  border-radius: 9px;
+  z-index: -1;
+}
+
+#hi-turtle-btn {
+  font-size: 30px;
+}
+
+#hi-turtle-btn:hover {
+  font-size: 30px;
+  cursor: pointer;
+}
+
+/* PROFILE PAGE ***************************************************************/
+.profile-infos {
+  position: fixed;
+  font-size: 50px;
+  right: 200px;
+  margin: 90px;
+  border: black;
+  /* background: rgb(241, 90, 90); */
+  border-radius: 5px;
+}
+
+#profile-new-product {
+  color: yellow;
+}
+
+.profile-modal {
+  background: black;
+}
+
+.profile-modal-content {
+  background: gray;
+}
+
+.my-profile {
+  padding: 40px;
+}
+.my-profile h1 {
+  font-size: 90px;
+}
+
+.profile-product {
+  background: #1a1a1a;
+  color: wheat;
+}
+
+.profile-product-btns {
+  display: flex;
+  justify-content: flex-start;
+}
+.profile-product-btn {
+  margin: 2px auto;
+  color: white;
+}
+
+#mk-btn-white {
+  color: white;
+}
+
+/* PRODUCT LIST PAGE ******************************************************* */
+
+.product-list-intro {
+  display: flex;
+  justify-content: space-around;
+  color: whitesmoke;
+}
+.product-list-intro div {
+  margin-top: 2%;
+}
+.product-list-container {
+  padding: 5%;
+}
+
+/* PRODUCT DETAILS PAGE ******************************************************/
+
+#product-detail-container {
+  margin: 5% auto;
+}
+
+.product-detail-img {
+  width: 500px;
+}
+
+/* SUCCESS PAGE *************************************************************/
+/* https://codepen.io/alex8855/details/mqwZbr */
+.success-content {
+  display: flex;
+  /* flex-flow: column nowrap; */
+  justify-content: space-around;
+  align-items: center;
+  font-size: 90px;
+}
+
+.success-content div {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  background: whitesmoke;
+  border-radius: 50px;
+  padding: 30px;
+  margin-top: 10%;
+}
+
+.success-content div a:hover {
+  transform: scale(1.4);
+  transition: transform 0.4s, opacity 0.5s;
+}
+
+.success-title {
+  font-weight: bold;
+  color: #5c5c5c;
+}
+
+.success-text {
+  margin-top: 15px;
+  font-size: 25px;
+  color: #e07202;
+  text-align: center;
+  font-weight: lighter;
+}
+
+/* CREATE PRODUCT FORM */
+
+.create-product-form {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+}
+.create-product-form div {
+  width: fit-content;
+  align-self: center;
+}
+
+.create-product-form div div label {
+  font-size: 40px;
+}
+
+.product-form-title {
+  padding: 50px 0 0 50px;
+  color: whitesmoke;
+  font-size: 70px;
+}
+/* LOGIN AND REGISTER*/
+/* https://codepen.io/colorlib/pen/rxddKy */
+.login-page {
+  width: 360px;
+  padding: 8% 0 0;
+  margin: auto;
+}
+.form {
+  position: relative;
+  z-index: 1;
+  background: #ffffff;
+  width: 600px;
+  margin: 2% auto;
+  padding: 45px;
+  text-align: center;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.9), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+.form input {
+  font-family: "Roboto", sans-serif;
+  font-size: xx-large;
+  outline: 0;
+  background: #f2f2f2;
+  width: 100%;
+  border: 0;
+  margin: 0 0 15px;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+.form button {
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  outline: 0;
+  background: #4caf50;
+  width: 100%;
+  border: 0;
+  padding: 15px;
+  color: #ffffff;
+  font-size: 14px;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+}
+.form button:hover,
+.form button:active,
+.form button:focus {
+  background: #43a047;
+}
+.form .message {
+  margin: 15px 0 0;
+  color: #b3b3b3;
+  font-size: 12px;
+}
+.form .message a {
+  color: #4caf50;
+  text-decoration: none;
+}
+.form .register-form {
+  display: none;
+}
+.container {
+  position: relative;
+  z-index: 1;
+  max-width: 300px;
+  margin: 0 auto;
+}
+.container:before,
+.container:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.container .info {
+  margin: 50px auto;
+  text-align: center;
+}
+.container .info h1 {
+  margin: 0 0 15px;
+  padding: 0;
+  font-size: 36px;
+  font-weight: 300;
+  color: #1a1a1a;
+}
+.container .info span {
+  color: #4d4d4d;
+  font-size: 12px;
+}
+.container .info span a {
+  color: #000000;
+  text-decoration: none;
+}
+.container .info span .fa {
+  color: #ef3b3a;
+}
+body {
+  background: #76b852; /* fallback for old browsers */
+  background: -webkit-linear-gradient(right, #76b852, #8dc26f);
+  background: -moz-linear-gradient(right, #76b852, #8dc26f);
+  background: -o-linear-gradient(right, #76b852, #8dc26f);
+  background: linear-gradient(to left, #76b852, #8dc26f);
+  font-family: "Roboto", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
