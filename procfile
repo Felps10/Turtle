@@ -1,1 +1,1 @@
-web: gunicorn turtle.wsgi --log-file -
+web: gunicorn turtle_django.wsgi --log-file -
