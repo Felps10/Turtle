@@ -132,7 +132,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # HEROKU SETUP
 # after import os
-
+#
 # at the bottom of the file
 django_heroku.settings(locals())
 PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
